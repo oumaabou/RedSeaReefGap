@@ -3,44 +3,44 @@
 <head>
 <meta charset="UTF-8" />
 <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-<title>RedSeaReefGap — Sampling-Gap Analysis of Red Sea Reef Fish</title>
+<title>RedSeaReefGap: Sampling Gap Analysis of Red Sea Reef Fish</title>
 <style>
   :root {
-    --deep: #0b3d5c;
-    --accent: #1f7a8c;
-    --sand: #f7f3ea;
+    --deep: #065091;
+    --light: #88abd4;
+    --white: #ffffff;
     --ink: #1c2a30;
-    --muted: #5b6b70;
-    --line: #e1dccf;
+    --muted: #56687a;
+    --line: #dbe6f2;
   }
   * { box-sizing: border-box; }
   body {
     margin: 0;
     font-family: "Georgia", "Times New Roman", serif;
-    background: var(--sand);
+    background: var(--white);
     color: var(--ink);
     line-height: 1.6;
   }
   header {
-    background: linear-gradient(160deg, var(--deep) 0%, var(--accent) 100%);
+    background: linear-gradient(160deg, var(--deep) 0%, var(--light) 100%);
     color: #fff;
-    padding: 56px 24px 44px;
+    padding: 48px 20px 38px;
     text-align: center;
   }
   header h1 {
     margin: 0 0 10px;
-    font-size: 2.1rem;
+    font-size: 2rem;
     letter-spacing: 0.3px;
   }
   header p.tag {
     margin: 0 auto;
     max-width: 640px;
-    font-size: 1.05rem;
-    color: #e6f2f5;
+    font-size: 1rem;
+    color: #eef4fa;
     font-family: -apple-system, "Segoe UI", Arial, sans-serif;
   }
   header .links {
-    margin-top: 22px;
+    margin-top: 20px;
     font-family: -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 0.9rem;
   }
@@ -52,35 +52,36 @@
   main {
     max-width: 880px;
     margin: 0 auto;
-    padding: 40px 24px 80px;
+    padding: 36px 20px 70px;
   }
-  section { margin-bottom: 56px; }
+  section { margin-bottom: 48px; }
   h2 {
     font-family: -apple-system, "Segoe UI", Arial, sans-serif;
-    font-size: 1.3rem;
+    font-size: 1.25rem;
     color: var(--deep);
     border-bottom: 2px solid var(--line);
     padding-bottom: 8px;
-    margin-bottom: 18px;
+    margin-bottom: 16px;
   }
   .stat-row {
     display: flex;
-    gap: 18px;
+    gap: 16px;
     flex-wrap: wrap;
-    margin: 22px 0 30px;
+    margin: 20px 0 26px;
     font-family: -apple-system, "Segoe UI", Arial, sans-serif;
   }
   .stat {
     flex: 1 1 220px;
-    background: #fff;
+    background: var(--white);
     border: 1px solid var(--line);
+    border-top: 3px solid var(--light);
     border-radius: 8px;
-    padding: 18px 20px;
+    padding: 16px 18px;
   }
   .stat .num {
-    font-size: 1.7rem;
+    font-size: 1.6rem;
     font-weight: 700;
-    color: var(--accent);
+    color: var(--deep);
     display: block;
   }
   .stat .label {
@@ -89,10 +90,10 @@
   }
   figure {
     margin: 0 0 10px;
-    background: #fff;
+    background: var(--white);
     border: 1px solid var(--line);
     border-radius: 8px;
-    padding: 14px;
+    padding: 12px;
   }
   figure img {
     width: 100%;
@@ -112,25 +113,33 @@
     color: var(--muted);
   }
   .callout {
-    background: #fff;
-    border-left: 4px solid var(--accent);
-    padding: 14px 18px;
+    background: #f2f7fc;
+    border-left: 4px solid var(--light);
+    padding: 14px 16px;
     border-radius: 4px;
     font-size: 0.98rem;
   }
   footer {
     text-align: center;
-    padding: 30px 24px 50px;
+    padding: 26px 20px 44px;
     font-family: -apple-system, "Segoe UI", Arial, sans-serif;
     font-size: 0.85rem;
     color: var(--muted);
   }
-  footer a { color: var(--accent); }
-  .missing-note {
-    font-family: -apple-system, "Segoe UI", Arial, sans-serif;
-    font-size: 0.82rem;
-    color: var(--muted);
-    font-style: italic;
+  footer a { color: var(--deep); }
+
+  @media (max-width: 640px) {
+    header { padding: 36px 16px 30px; }
+    header h1 { font-size: 1.6rem; }
+    header p.tag { font-size: 0.92rem; }
+    main { padding: 26px 16px 50px; }
+    section { margin-bottom: 36px; }
+    h2 { font-size: 1.1rem; }
+    .stat-row { gap: 12px; margin: 16px 0 20px; }
+    .stat { flex: 1 1 100%; padding: 14px 16px; }
+    .stat .num { font-size: 1.4rem; }
+    figure { padding: 10px; }
+    .callout { font-size: 0.92rem; padding: 12px 14px; }
   }
 </style>
 </head>
@@ -138,11 +147,11 @@
 
 <header>
   <h1>RedSeaReefGap</h1>
-  <p class="tag">Where does the public biodiversity record for Red Sea reef fish actually have data — and where is it silent? A GBIF-based sampling-effort gap analysis, built in R.</p>
+  <p class="tag">Where does the public biodiversity record for Red Sea reef fish actually have data, and where is it silent? A GBIF sampling gap analysis, built in R.</p>
   <div class="links">
     <a href="https://github.com/oumaabou/RedSeaReefGap">GitHub repository</a>
     ·
-    <a href="https://github.com/oumaabou/RedSeaReefGap#readme">Full methodology &amp; limitations</a>
+    <a href="https://github.com/oumaabou/RedSeaReefGap#readme">Full methodology and limitations</a>
   </div>
 </header>
 
@@ -151,11 +160,11 @@
   <section>
     <h2>The question</h2>
     <p>
-      This project looks at six common Red Sea reef-fish families — surgeonfishes, tunas &amp; mackerels,
-      parrotfishes, jacks, groupers, and snappers — through the lens of the
+      This project looks at six common Red Sea reef fish families (surgeonfishes, tunas and mackerels,
+      parrotfishes, jacks, groupers, and snappers) through the lens of the
       <a href="https://www.gbif.org/">Global Biodiversity Information Facility (GBIF)</a>. Rather than mapping
-      where these fish live, it maps where they have been <em>recorded</em>, which for citizen-science-heavy
-      data turns out to be a very different, and much more revealing, question.
+      where these fish live, it maps where they have been <em>recorded</em>, which for data this heavy on
+      citizen science turns out to be a very different, and much more revealing, question.
     </p>
     <p class="families">Acanthuridae · Scombridae · Scaridae · Carangidae · Serranidae · Lutjanidae</p>
   </section>
@@ -164,21 +173,21 @@
     <h2>Headline numbers</h2>
     <div class="stat-row">
       <div class="stat">
-        <span class="num">70–85%</span>
-        <span class="label">of every family's GBIF records come from a single country — Egypt — concentrated on two Sinai dive sites</span>
+        <span class="num">70 to 85%</span>
+        <span class="label">of every family's GBIF records come from a single country, Egypt, concentrated on two Sinai dive sites</span>
       </div>
       <div class="stat">
-        <span class="num">70–82%</span>
+        <span class="num">70 to 82%</span>
         <span class="label">of dated records are from 2015 onward, tracking iNaturalist's growth rather than fish abundance</span>
       </div>
       <div class="stat">
-        <span class="num">&lt;5%</span>
-        <span class="label">typical combined share of records from Sudan, Eritrea, Yemen &amp; Djibouti per family</span>
+        <span class="num">Under 5%</span>
+        <span class="label">typical combined share of records from Sudan, Eritrea, Yemen and Djibouti per family</span>
       </div>
     </div>
     <p class="callout">
-      In practice: a trend read directly off raw GBIF record counts for these families is, to a large extent,
-      a trend in dive tourism and app usage — not necessarily a trend in the fish themselves.
+      In practice, a trend read directly off raw GBIF record counts for these families is, to a large extent,
+      a trend in dive tourism and app usage, not necessarily a trend in the fish themselves.
     </p>
   </section>
 
@@ -187,8 +196,8 @@
     <figure>
       <img src="output/spatial_gap_by_country.png" alt="Bar chart of GBIF occurrence records by country, faceted by fish family, log scale" />
       <figcaption>
-        Occurrence records by country, per family (log scale). Blue bars are Red Sea littoral states;
-        red bars are non-littoral countries picked up at the edges of the bounding box.
+        Occurrence records by country, per family, log scale. Blue bars are Red Sea littoral states;
+        red bars are countries outside the Red Sea coastline picked up at the edges of the bounding box.
         Generated by <code>R/02_spatial_gap_analysis.R</code>.
       </figcaption>
     </figure>
@@ -200,7 +209,7 @@
       <img src="output/temporal_gap_by_decade.png" alt="Bar chart of occurrence records by decade, faceted by fish family" />
       <figcaption>
         Records per decade, per family. The oldest specimens date to the 1820s, but coverage is thin and
-        sporadic until the citizen-science era beginning around 2015.
+        sporadic until the rise of citizen science, starting around 2015.
         Generated by <code>R/03_temporal_gap_analysis.R</code>.
       </figcaption>
     </figure>
@@ -211,8 +220,8 @@
     <figure>
       <img src="output/sample_occurrence_map.png" alt="Map of 19 verified sample occurrence points in the Red Sea region, colored by family" />
       <figcaption>
-        A small, individually-verified sample (n = 19) of real GBIF records, shown for illustration —
-        not used to support the gap-analysis conclusions above, which are based on complete aggregate counts.
+        A small, individually verified sample (19 records) of real GBIF records, shown for illustration.
+        It is not used to support the gap analysis conclusions above, which are based on complete aggregate counts.
         Generated by <code>R/04_map_occurrences.R</code>.
       </figcaption>
     </figure>
@@ -222,12 +231,12 @@
     <h2>Method, in brief</h2>
     <p>
       All figures come from live queries against the GBIF Occurrence API, restricted to a Red Sea bounding
-      box (12–30°N, 32–44°E). Country and year breakdowns use GBIF's own facet counts, which cover
-      <strong>every</strong> matching record — not a sample. The full R pipeline (clean → spatial gap →
-      temporal gap → map) runs automatically on GitHub Actions on every push, so these charts are
+      box (12 to 30°N, 32 to 44°E). Country and year breakdowns use GBIF's own facet counts, which cover
+      <strong>every</strong> matching record, not a sample. The full R pipeline (clean, spatial gap,
+      temporal gap, map) runs automatically on GitHub Actions on every push, so these charts are
       regenerated from a real, reproducible run rather than asserted. See the
       <a href="https://github.com/oumaabou/RedSeaReefGap#scope-and-limitations">Scope and limitations</a>
-      section of the README for the caveats (GBIF-only, bounding-box edge cases, citizen-science bias).
+      section of the README for the caveats (GBIF only, bounding box edge cases, citizen science bias).
     </p>
   </section>
 
