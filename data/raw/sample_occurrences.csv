@@ -1,0 +1,20 @@
+family,scientificName,genus,species,lat,lon,country,locality,eventDate,recordedBy,gbifID,occurrenceID
+Acanthuridae,Zebrasoma desjardinii,Zebrasoma,desjardinii,27.913135,34.349029,EG,Ras Mohammed National Park,2026-01-05,Boris,5938037221,333655719
+Acanthuridae,Naso elegans,Naso,elegans,27.913819,34.349229,EG,Sharm el-Sheikh,2026-01-05,Boris,5938058731,333655691
+Acanthuridae,Naso elegans,Naso,elegans,27.847403,34.315041,EG,"Red Sea, Janub Sina",2026-01-02,Simon,5938076518,333419279
+Acanthuridae,Zebrasoma desjardinii,Zebrasoma,desjardinii,27.913385,34.349067,EG,Ras Mohammed National Park,2026-01-05,Boris,5938117654,333656366
+Scombridae,Gymnosarda unicolor,Gymnosarda,unicolor,25.231,36.849,SA,Saudi Arabia (Red Sea coast),2026-01-17,milesleask,6130528930,335072047
+Scombridae,Rastrelliger kanagurta,Rastrelliger,kanagurta,27.913929,34.349383,EG,Sharm el-Sheikh,2026-01-06,Boris,6130692146,333720964
+Scombridae,Euthynnus affinis,Euthynnus,affinis,25.623,36.49,SA,"Tabuk, Saudi Arabia",2026-01-09,milesleask,6131647475,334964047
+Scaridae,Chlorurus sordidus,Chlorurus,sordidus,27.913528,34.349144,EG,Sharm el-Sheikh,2026-01-05,Boris,5938030136,333655605
+Scaridae,Chlorurus sordidus,Chlorurus,sordidus,27.848105,34.314441,EG,Sharm el-Sheikh,2026-01-02,Simon,5938142952,333419674
+Scaridae,Chlorurus sordidus,Chlorurus,sordidus,27.847138,34.31439,EG,"Red Sea, Janub Sina",2026-01-04,Simon,5938149647,333448236
+Carangidae,Craterognathus plagiotaenia,Craterognathus,plagiotaenia,22.29802,38.964407,SA,"Mecca region, Saudi Arabia",2026-01-14,Christy T Judd,6130176415,336085884
+Carangidae,Caranx melampygus,Caranx,melampygus,27.913978,34.349844,EG,Sharm el-Sheikh,2026-01-08,Boris,6130197295,333952218
+Carangidae,Flavocaranx bajad,Flavocaranx,bajad,27.847025,34.314432,EG,"Red Sea, Janub Sina",2026-01-06,Simon,6130237968,333741373
+Serranidae,Cephalopholis argus,Cephalopholis,argus,27.850421,34.317737,EG,"Red Sea, Janub Sina",2026-01-04,Simon,5938423533,333443778
+Serranidae,Cephalopholis argus,Cephalopholis,argus,27.913522,34.349072,EG,Sharm el-Sheikh,2026-01-05,Boris,5938494282,333654931
+Serranidae,Pseudanthias squamipinnis,Pseudanthias,squamipinnis,27.256618,33.889499,EG,Red Sea,2026-01-01,audrey,5938571413,333038603
+Lutjanidae,Macolor niger,Macolor,niger,27.913929,34.349383,EG,Sharm el-Sheikh,2026-01-06,Boris,6130134932,333720818
+Lutjanidae,Macolor niger,Macolor,niger,27.913798,34.350844,EG,Sharm el-Sheikh,2026-01-10,Boris,6131535999,334194679
+Lutjanidae,Lutjanus ehrenbergii,Lutjanus,ehrenbergii,27.690125,34.132486,EG,Ras Mohammed National Park,2026-01-24,Brenton Prigge,6133218119,336252822

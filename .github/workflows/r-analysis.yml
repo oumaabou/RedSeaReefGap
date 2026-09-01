@@ -1,0 +1,48 @@
+name: Run R analysis
+
+# This workflow exists because the analysis was authored in an environment
+# without a full R + tidyverse installation available. It installs real R
+# and the packages this project uses, runs the actual analysis scripts on
+# GitHub's runners, and uploads the generated plots/tables as build
+# artifacts -- so the results in this repo are independently reproducible
+# and not just claimed to work.
+
+on:
+  push:
+    branches: [ main ]
+  pull_request:
+    branches: [ main ]
+  workflow_dispatch:
+
+jobs:
+  analyze:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: r-lib/actions/setup-r@v2
+        with:
+          r-version: '4.4.1'
+
+      - name: Cache R packages
+        uses: actions/cache@v4
+        with:
+          path: ${{ env.R_LIBS_USER }}
+          key: r-pkgs-${{ hashFiles('R/**') }}
+          restore-keys: r-pkgs-
+
+      - name: Install R package dependencies
+        run: |
+          Rscript -e 'install.packages(c("dplyr","readr","tidyr","tibble","ggplot2","scales","maps"), repos = "https://cloud.r-project.org")'
+
+      - name: Run analysis pipeline
+        run: Rscript R/run_all.R
+
+      - name: Upload processed data + outputs
+        uses: actions/upload-artifact@v4
+        with:
+          name: redseareefgap-outputs
+          path: |
+            data/processed/
+            output/
+          retention-days: 90
