@@ -1,18 +1,28 @@
-name: Run R analysis
+name: Run R analysis and publish site
 
 # This workflow exists because the analysis was authored in an environment
 # without a full R + tidyverse installation available. It installs real R
 # and the packages this project uses, runs the actual analysis scripts on
-# GitHub's runners, and uploads the generated plots/tables as build
-# artifacts -- so the results in this repo are independently reproducible
-# and not just claimed to work.
+# GitHub's runners, uploads the generated plots/tables as build artifacts,
+# and publishes the static site (site/index.html + the freshly-generated
+# plots) to GitHub Pages -- so the results in this repo, and on the public
+# page, are independently reproducible and not just claimed to work.
 
 on:
   push:
-    branches: [ main ]
+    branches: [ main, master ]
   pull_request:
-    branches: [ main ]
+    branches: [ main, master ]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: false
 
 jobs:
   analyze:
@@ -46,3 +56,26 @@ jobs:
             data/processed/
             output/
           retention-days: 90
+
+      - name: Assemble static site
+        run: |
+          mkdir -p _site/output
+          cp site/index.html _site/index.html
+          cp output/*.png _site/output/
+
+      - name: Upload Pages artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: _site
+
+  deploy-pages:
+    if: github.ref == 'refs/heads/main' || github.ref == 'refs/heads/master'
+    needs: analyze
+    runs-on: ubuntu-latest
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4

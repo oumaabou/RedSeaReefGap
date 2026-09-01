@@ -9,6 +9,10 @@ Rather than mapping where these fish live, this project maps where they have
 been *recorded* — which, for citizen-science-heavy data like this, is a very
 different and much more revealing question.
 
+**Live site:** https://oumaabou.github.io/RedSeaReefGap/ (published automatically
+by GitHub Actions on every push — see "Reproducing this" below for the
+one-time setup needed on the repo).
+
 ## Families analyzed
 
 | Family | Common name | GBIF familyKey |
@@ -81,6 +85,12 @@ independently checkable rather than just asserted, the analysis runs for
 real on GitHub Actions on every push — see
 `.github/workflows/r-analysis.yml` and the workflow's **Actions** tab for
 the actual output artifacts (plots + processed CSVs) from a real R run.
+
+The same workflow also rebuilds `site/index.html` with the freshly-generated
+plots and deploys it to GitHub Pages. **One-time setup after you push:** on
+GitHub, go to *Settings → Pages → Build and deployment → Source*, and set it
+to **GitHub Actions**. After that, every push re-runs the analysis and
+re-publishes the site automatically.
 
 To run it yourself locally:
 
