@@ -9,9 +9,8 @@ Rather than mapping where these fish live, this project maps where they have
 been *recorded* — which, for citizen-science-heavy data like this, is a very
 different and much more revealing question.
 
-**Live site:** https://oumaabou.github.io/RedSeaReefGap/ (published automatically
-by GitHub Actions on every push — see "Reproducing this" below for the
-one-time setup needed on the repo).
+**Live site:** https://oumaabou.github.io/RedSeaReefGap/
+
 
 ## Families analyzed
 
